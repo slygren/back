@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM alpine:3.7
 
 ENV TAIGA_HOST=taiga.lan \
 	TAIGA_SECRET=secret \
