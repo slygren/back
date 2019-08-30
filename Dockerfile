@@ -16,7 +16,7 @@ ENV TAIGA_HOST=taiga.lan \
 
 WORKDIR /srv/taiga
 
-RUN apk --no-cache add packagename=3.6.8-r0 gettext postgresql-dev libxslt-dev libxml2-dev libjpeg-turbo-dev zeromq-dev libffi-dev nginx \
+RUN apk --no-cache add 'packagename<3.6.8-r0' gettext postgresql-dev libxslt-dev libxml2-dev libjpeg-turbo-dev zeromq-dev libffi-dev nginx \
 	&& apk add --no-cache --virtual .build-dependencies musl-dev python3-dev linux-headers git zlib-dev libjpeg-turbo-dev gcc \
 	&& mkdir logs \
 	&& git clone --depth=1 -b master https://github.com/taigaio/taiga-back.git back && cd back \
