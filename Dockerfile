@@ -23,6 +23,7 @@ RUN apk --no-cache add python3 gettext postgresql-dev libxslt-dev libxml2-dev li
 	&& sed -e 's/cryptography==.*/cryptography==2.3.1/' -i requirements.txt \
 	&& pip3 install --upgrade pip \
 	&& pip3 install -r requirements.txt \
+	&& pip3 install kombu==4.2.0 \
 	&& rm -rf /root/.cache \
 	&& apk del .build-dependencies \
 	&& rm /srv/taiga/back/settings/local.py.example \
